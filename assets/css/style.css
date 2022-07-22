@@ -1,0 +1,47 @@
+* {
+    font-family: "Roboto";
+    --primary: #007bb4;
+    --accent: rgb(89, 175, 255);
+  }
+  .manager {
+    color: #0310be;
+  }
+  .engineer {
+    color: #212ff3;
+  }
+  intern {
+    color: #6e78fd;
+  }
+  body {
+    width: 100%;
+    height: 100%;
+    background-color: #e9e9e9;
+    color: var(--primary);
+  }
+  header {
+    color: var(--primary);
+    border-bottom: 3px solid rgb(0, 11, 32);
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    margin: 1rem;
+  }
+  main {
+    position: fixed;
+    top: 120px;
+  }
+  .card {
+    background-color: #f3f3f3;
+  }
+  .cards .card {
+    margin: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: rgba(0, 214, 132, 0.5);
+  }
+  a:hover {
+    color: var(--accent);
+  }
