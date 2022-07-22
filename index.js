@@ -121,7 +121,7 @@ function addEmployee() {
             internQuestions();
         } else {
             fs.writeFile(
-                `./dist/${employeeArray[0].getName()}.html`,
+                `./dist/generated-team-profiles.html`,
                 generateHTML(employeeArray),
                 (err) => (err ? console.error(err) : console.log("Success!"))
               );
