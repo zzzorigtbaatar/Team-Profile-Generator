@@ -31,6 +31,38 @@ function managerQuestions() {
             answers.managerOfficeNum
         );
         employeeArray.push(managerData);
+        addEmployee();
+    });
+}
+
+function engineerQuestions() {
+}
+
+function internQuestions() {
+
+}
+
+function addEmployee() {
+    const employeeTypeQuestions = [
+        {
+            name: "employeeType",
+            message: "Which type of team member would you like to add?",
+            type: "list",
+            choices: [
+                "Engineer",
+                "Intern",
+                "Cancel adding team member",
+            ],
+        },
+    ];
+    inquirer.prompt(employeeTypeQuestions).then((answers) => {
+        if (answers.employeeType === "Engineer") {
+            engineerQuestions();
+        } else if (answers.employeeType === "Intern") {
+            internQuestions();
+        } else {
+            //create HTML
+        }
     });
 }
 
