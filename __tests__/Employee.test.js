@@ -21,36 +21,11 @@ describe("Employee class", () => {
       });
     });
   });
-  // it("should throw an error if provided no arguments", () => {
-  //   // Wrap the object initialization in a callback function that Jest will run
-  //   // Act
-  //   const cb = () => new Employee();
 
-  //   // Verify that an error was thrown in the callback function
-  //   // Assert
-  //   expect(cb).toThrow();
-  // });
 
-  // it("should throw an error if not provided an age", () => {
-  //   // Act
-  //   const cb = () => new Employee("Sarah");
 
-  //   // Define the error message that is expected to be thrown
-  //   const err = new Error("Expected parameter 'age' to be a non-negative number");
 
-  //   // Verify that the correct error was thrown when the callback is executed
-  //   // Assert
-  //   expect(cb).toThrowError(err);
-  // });
 
-  // it("should throw an error if 'name' is not a string", () => {
-  //   // Act
-  //   const cb = () => new Employee(3, 2);
-  //   const err = new Error("Expected parameter 'name' to be a non-empty string");
-
-  //   // Assert
-  //   expect(cb).toThrowError(err);
-  // });
 
   // it("should throw an error if 'age' is not a number", () => {
   //   // Act
