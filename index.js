@@ -36,6 +36,34 @@ function managerQuestions() {
 }
 
 function engineerQuestions() {
+    const questions = [
+        { 
+            name: "engineerName", 
+            message: "What is the engineer's name?" 
+        },
+        {
+          name: "engineerID",
+          message: "What is the engineer's id?",
+        },
+        { 
+            name: "engineerEmail", 
+            message: "What is the engineer's email?" 
+        },
+        {
+          name: "engineerGitHubUsername",
+          message: "What is the engineer's GitHub username?",
+        },
+      ];
+      inquirer.prompt(questions).then((answers) => {
+        const engineer = new Engineer(
+          answers.engineerName,
+          answers.engineerID,
+          answers.engineerEmail,
+          answers.engineerGitHubUsername
+        );
+        employeeArray.push(engineer);
+        addEmployee();
+      });
 }
 
 function internQuestions() {
