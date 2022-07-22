@@ -1,6 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
 const employeeArray = [];
 
@@ -14,9 +16,9 @@ function managerQuestions() {
             name: "managerID",
             message: "What is the team manager's id?",
         },
-        { 
-            name: "managerEmail", 
-            message: "What is the team manager's email?" 
+        {
+            name: "managerEmail",
+            message: "What is the team manager's email?"
         },
         {
             name: "managerOfficeNum",
@@ -37,37 +39,64 @@ function managerQuestions() {
 
 function engineerQuestions() {
     const questions = [
-        { 
-            name: "engineerName", 
-            message: "What is the engineer's name?" 
+        {
+            name: "engineerName",
+            message: "What is the engineer's name?"
         },
         {
-          name: "engineerID",
-          message: "What is the engineer's id?",
-        },
-        { 
-            name: "engineerEmail", 
-            message: "What is the engineer's email?" 
+            name: "engineerID",
+            message: "What is the engineer's id?",
         },
         {
-          name: "engineerGitHubUsername",
-          message: "What is the engineer's GitHub username?",
+            name: "engineerEmail",
+            message: "What is the engineer's email?"
         },
-      ];
-      inquirer.prompt(questions).then((answers) => {
+        {
+            name: "engineerGitHubUsername",
+            message: "What is the engineer's GitHub username?",
+        },
+    ];
+    inquirer.prompt(questions).then((answers) => {
         const engineer = new Engineer(
-          answers.engineerName,
-          answers.engineerID,
-          answers.engineerEmail,
-          answers.engineerGitHubUsername
+            answers.engineerName,
+            answers.engineerID,
+            answers.engineerEmail,
+            answers.engineerGitHubUsername
         );
         employeeArray.push(engineer);
         addEmployee();
-      });
+    });
 }
 
 function internQuestions() {
-
+    const questions = [
+        {
+            name: "internName",
+            message: "What is your intern's name?"
+        },
+        {
+            name: "internID",
+            message: "What is the team intern's id?",
+        },
+        {
+            name: "internEmail",
+            message: "What is the team intern's email?"
+        },
+        {
+            name: "internSchool",
+            message: "What is the team intern's school?",
+        },
+    ];
+    inquirer.prompt(questions).then((answers) => {
+        const intern = new Intern(
+            answers.internName,
+            answers.internID,
+            answers.internEmail,
+            answers.internSchool
+        );
+        employeeArray.push(intern);
+        addEmployee();
+    });
 }
 
 function addEmployee() {
