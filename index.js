@@ -4,6 +4,8 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
+const generateHTML = require("./src/generateHTML");
+
 const employeeArray = [];
 
 function managerQuestions() {
@@ -118,7 +120,11 @@ function addEmployee() {
         } else if (answers.employeeType === "Intern") {
             internQuestions();
         } else {
-            //create HTML
+            fs.writeFile(
+                `./dist/${employeeArray[0].getName()}.html`,
+                generateHTML(employeeArray),
+                (err) => (err ? console.error(err) : console.log("Success!"))
+              );
         }
     });
 }
